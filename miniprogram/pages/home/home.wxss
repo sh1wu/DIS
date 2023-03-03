@@ -1,0 +1,134 @@
+/* pages/home/home.wxss */
+page {
+  background: rgba(232, 232, 232);
+}
+.backcolor {
+  margin-top: -90px;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(#00A2FF, rgba(255, 0, 0, 0));
+}
+
+.logotext{
+  margin-top:50px;
+  font-size: 30px;
+  font-weight: lighter;
+
+}
+.swiper1 {
+  border: 1px solid #eee;
+  width: 100%;
+  height: 150px;
+  box-shadow: 0px 10px 0px 0px #ddd;
+}
+.swiperitem{
+  padding: 0 5px;
+  box-sizing:border-box;
+}
+.swiperimage{
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+
+}
+
+.logo {
+  width: 400px;
+  height: 150px;
+  border-bottom: solid 50rpx #00A2FF;
+  box-shadow: 5px 10px 4px 2px #DDDDDD;
+}
+
+.btnline1 {
+
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.qx-icon {
+  /* position: fixed; */
+  width: 50px;
+  height: 42px;
+  margin-left: 10px;
+  /* bottom: 55%;
+  left: 12%; */
+}
+
+.covid-text {
+  /* position: fixed; */
+  width: 100px;
+  height: 42px;
+  /* bottom: 45%;
+  left: 5%; */
+}
+
+.dizhen-icon {
+  /* position: fixed; */
+  width: 42px;
+  height: 42px;
+  margin-left: 20px;
+  /* bottom: 55%;
+  left: 43%; */
+}
+
+.dizhen-text {
+  /* position: fixed; */
+  width: 100px;
+  height: 42px;
+  /* bottom: 45%;
+  left: 37%; */
+}
+
+.hl-icon {
+  width: 42px;
+  height: 42px;
+  margin-left: 20px;
+}
+
+.fangzai-text {
+  width: 100px;
+  height: 42px;
+}
+
+.notiLine {
+  border-top: solid 2px #ddd;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  background-color: white;
+}
+.sheltertext{
+  padding: 2%;
+  font-size: 20px;
+  background-color: white;
+}
+.btnline2 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: solid 2px #ddd;
+}
+.map{
+  margin: 5%;
+  width: 80%;
+}
+.box{
+  width: 75%;
+  margin-left: 7%;
+  margin-bottom: 10px;
+  padding: 5%;
+  border-radius: 8px;
+  box-shadow: 1px 3px 5px grey;
+
+}

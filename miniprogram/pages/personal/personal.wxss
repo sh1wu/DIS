@@ -1,0 +1,133 @@
+/* pages/personal/personal.wxss */
+page {
+  background: rgba(232, 232, 232);
+}
+
+.background {
+  margin-top: -13%;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(#00A2FF, rgba(255, 0, 0, 0));
+}
+
+.bgimg {
+  margin-left: 5%;
+}
+
+.content1 {
+  margin: 5%;
+  margin-top: -10px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+}
+
+.login {
+  margin: 5%;
+  border: solid 5px #eee;
+  border-radius: 20px;
+}
+
+.welcome {
+  margin: 5%;
+
+}
+
+.content2 {
+  margin: 5%;
+  margin-left: 5%;
+  width: 90%;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+  box-shadow:0px 5px 0px 0px #ddd;
+}
+
+.personalFile {
+  margin: 5%;
+  border-radius: 5px;
+}
+
+.btn1 {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: -18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+}
+
+.btn2 {
+  width: 345px;
+  height: 60px;
+  margin: 5%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+}
+.angular1{
+  margin-top: -15%;
+  margin-left: 82%;
+}
+
+.btn3 {
+  width: 345px;
+  height: 60px;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+}
+
+.angular2{
+  margin-top: -15%;
+  margin-left: 82%;
+}
+
+.btn4 {
+  margin: 5%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+}
+.btn5 {
+  margin: 5%;
+  margin-top: -17px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+}
+
+.author {
+  margin-top: 20px;
+  margin-left: 20%;
+  color: grey;
+  font-size: 15px;
+  font-weight: lighter;
+}

@@ -1,0 +1,97 @@
+<!--pages/home/home.wxml-->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
+<view class="backcolor"></view>
+<view class="logotext">EAS </view>
+<view style="font-size: 20px;font-weight: lighter;">灾害信息管理系统</view>
+<swiper class="swiper1" autoplay="true" duration="1000" circular="true" previous-margin="10px" next-margin="10px">
+  <swiper-item class="swiperitem">
+    <view>
+      <image class="swiperimage" src="https://43.137.3.168:13319/down/wLeFAlHuUakN.png" catchtap="navSwiper1" data-url="/pages/post/post"></image>
+    </view>
+  </swiper-item>
+  <swiper-item class="swiperitem">
+    <view>
+      <image class="swiperimage" src="https://43.137.3.168:13319/down/wLeFAlHuUakN.png" catchtap="navSwiper2" data-url="/pages/post/post"></image>
+    </view>
+  </swiper-item>
+  <swiper-item class="swiperitem">
+    <view>
+      <image class="swiperimage" src="https://43.137.3.168:13319/down/wLeFAlHuUakN.png" catchtap="navSwiper3" data-url="/pages/post/post"></image>
+    </view>
+  </swiper-item>
+</swiper>
+<view class="btnline1" style="margin-top: 5%;padding: 5%;">
+  <view bindtap='navToQX'>
+    <image class="qx-icon" src="../../images/qxicon.png">疫情信息专区</image>
+    <view class="covid-text">气象灾害信息</view>
+  </view>
+  <view bindtap='navToDizhen'>
+    <image class="dizhen-icon" src="../../images/dzicon.png"></image>
+    <view class="dizhen-text">地震灾害信息</view>
+  </view>
+  <view bindtap='navToFangzai'>
+    <image class="hl-icon" src="../../images/hlicon.png"></image>
+    <view class="fangzai-text">洪涝灾害信息</view>
+  </view>
+</view>
+<view class="btnline1" style="margin-top: 0%;padding: 5%;border-top: solid 2px #ddd;">
+  <view bindtap='navToGuide'>
+    <image class="hl-icon" src="../../images/wricon.png"></image>
+    <view class="fangzai-text">污染灾害信息</view>
+  </view>
+  <view bindtap='navToBinan' style="padding-left: 5%;background-color: white;">
+    <image class="hl-icon" src="../../images/noicon.png"></image>
+    <view class="fangzai-text">暂无灾害信息</view>
+  </view>
+  <view bindtap='navToJiuyuan' style="padding-left: 5%;background-color: white;">
+    <image class="hl-icon" src="../../images/bnsicon.png"></image>
+    <view class="fangzai-text">避难所信息</view>
+  </view>
+</view>
+<view class="notiLine" style="margin-top: 5%;">
+  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/notification.png" style="width: 40px;height: 40px;"></image>
+  <swiper autoplay="true" vertical="true" style="width: 70%;height: 40px; border-radius: 10px;">
+    <swiper-item>
+      <view catchtap="navSwiper4" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">快来更改个人头像昵称啦！</view>
+    </swiper-item>
+    <swiper-item>
+      <view catchtap="navSwiper5" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">秋台风为何往往更凶猛？</view>
+    </swiper-item>
+    <swiper-item>
+      <view catchtap="navSwiper6" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">一张图了解天气与森林草原火险 你该知道的那些事儿</view>
+    </swiper-item>
+    <swiper-item>
+      <view catchtap="navSwiper7" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">冬季疫情防控指南</view>
+    </swiper-item>
+  </swiper>
+  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="width: 20px;height: 20px; margin: 10px;margin-right: -10px;"></image>
+</view>
+<view style="width: 375px;background-color: black;"></view>
+<view class="btnline2">
+  <view class="sheltertext">应急避难所</view>
+  <button bindtap="more" style="margin-right:-25px; width: 90px; padding-top: 3%; font-size: 13px;font-weight: lighter; color: grey;">更多</button>
+  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="padding-top: 3%; width: 16px;height: 16px;"></image>
+</view>
+<view style="background-color: white;">
+  <view style="color: wheat;font-size: 15px;font-weight: lighter;">成都市应急避难所地点</view>
+  <map id="map" longitude="104.065681" latitude="30.653442" scale="10" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" enable-scroll="false" bindmarkertap="markertap" polyline="{{polyline}}" show-compass="true" bindregionchange="regionchange" style="margin-top: 5%; margin-left: 10%; width: 80%; height:200px;border-radius: 10px;">
+  </map>
+  <view style="margin-top: 10%; background-color: white;border-top: solid 5px #ddd;"></view>
+  <view wx:for="{{list}}" wx:key="id" class="box">
+    <view>
+      <label>{{item.sheltername}}</label>
+    </view>
+    <view>
+      <view>经度</view>
+      <label>{{item.locate.longitude}}</label>
+    </view>
+    <view>
+      <view>纬度</view>
+      <label>{{item.locate.latitude}}</label>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>
