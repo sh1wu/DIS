@@ -1,0 +1,86 @@
+<!--pages/dizhen/dizhen.wxml-->
+<text style="font-size: 30px;font: lighter;margin-left: 30rpx;">地震信息</text>
+<view class="btnline">
+  <view class="btn1" style="background-color: {{bgcolor1}};" bindtap="list1"><text style="margin:75rpx;">地震查询</text></view>
+  <view class="btn1" style="background-color: {{bgcolor2}};" bindtap="list2"><text style="margin:75rpx;">地震目录</text></view>
+</view>
+<view hidden="{{hidden1}}">
+  <view class="btnline2" style="display: flex; font-size:40rpx">
+    <view class="btn2">日期</view>
+    <picker mode="date" value="{{date1}}" start="2013-01-01" end="2023-03-10" bindchange="bindDateChange1">
+      <view class="box1">
+        {{date1}}
+      </view>
+    </picker>
+    <text style="margin-top: 20rpx;">至</text>
+    <picker mode="date" value="{{date2}}" start="2013-01-01" end="2023-03-10" bindchange="bindDateChange2">
+      <view class="box1">
+        {{date2}}
+      </view>
+    </picker>
+  </view>
+  <view style="padding: 10rpx;margin-left: 20rpx; margin-bottom: 40rpx;border-radius: 10rpx; display: flex;height: 50rpx; width: 198rpx;" bindtap="showMore" hidden="{{!showmore}}">
+    <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/moreChoose.png" style="border-radius: 10rpx;  width: 50rpx; height: 50rpx;"></image>
+    <view style="margin: 10rpx;">高级筛选</view>
+  </view>
+  <view hidden="{{showmore}}">
+    <view class="btnline2" style="display: flex;font-size: 40rpx;">
+      <view class="btn2">震级</view>
+      <input type="number" class="box1" maxlength="1" bindinput="magnitudeInput1" placeholder="{{magnitude1}}" />
+      <text style="margin-top: 20rpx;">至</text>
+      <input type="number" class="box1" maxlength="2" bindinput="magnitudeInput2" placeholder="{{magnitude2}}" />
+    </view>
+    <view class="btnline2" style="display: flex;font-size: 40rpx;">
+      <view class="btn2">经度</view>
+      <input type="digit" class="box1" maxlength="6" bindinput="longitudeInput1" placeholder="{{longitude1}}" />
+      <text style="margin-top: 20rpx;">至</text>
+      <input type="digit" class="box1" maxlength="6" bindinput="longitudeInput2" placeholder="{{longitude2}}" />
+    </view>
+    <view class="btnline2" style="display: flex;font-size: 40rpx;">
+      <view class="btn2">纬度</view>
+      <input type="digit" class="box1" maxlength="6" bindinput="latitudeInput1" placeholder="{{latitude1}}" />
+      <text style="margin-top: 20rpx;">至</text>
+      <input type="digit" class="box1" maxlength="6" bindinput="latitudeInput2" placeholder="{{latitude2}}" />
+    </view>
+    <view class="btnline2" style="display: flex;font-size: 40rpx;">
+      <view class="btn2">深度</view>
+      <input type="digit" class="box1" maxlength="6" bindinput="depthInput1" placeholder="{{depth1}}" />
+      <text style="margin-top: 20rpx;">至</text>
+      <input type="digit" class="box1" maxlength="6" bindinput="depthInput2" placeholder="{{depth2}}" />
+    </view>
+    <view class="regionbtnline" style="display: flex;font-size: 40rpx;">
+      <view class="regionbtn">地点</view>
+      <view class="region">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="regionPicker">
+            {{region[0]}} {{region[1]}} {{region[2]}}
+          </view>
+        </picker>
+        <view>
+          <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/chooseRegion.png" style=" width: 50rpx; height: 50rpx;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="display: flex;">
+    <view bindtap="submit" class="submit"><text style="margin:20rpx">查询</text></view>
+    <view class="download" style="color: {{download}};"><text style="margin:20rpx">数据下载</text></view>
+  </view>
+
+  <view class="dzinfo">
+    <text style="margin:20rpx">序号</text>
+    <text style="margin:20rpx;margin-left:50rpx">发震时刻</text>
+    <text style="margin:20rpx;margin-left:70rpx">震级</text>
+    <text style="margin:20rpx;margin-left:80rpx">震中</text>
+  </view>
+  <view wx:for="{{dzinfo}}" wx:key="id" hidden="{{dzInfoHidden}}">
+    <view class="dzinfo1" bindtap="moreInfo"  data-index="{{index}}">
+      <view style="margin-top: 50rpx;margin-left: 50rpx;" >{{index+1}}</view>
+      <view style="margin-top: 40rpx;margin-left:100rpx;width: 350rpx;font-size: 30rpx;">{{item.date}}</view>
+      <view style="margin-top: 50rpx;margin-left: 80rpx;">{{item.magnitude}}</view>
+      <view style="margin-top: 20rpx; margin-left: 80rpx;">{{item.epicenter}}</view>
+    </view>
+  </view>
+  
+  <view style="margin: 30rpx;margin-top: 200rpx; color: #4b4b4b;font-weight: lighter;font-size: 25rpx;"> 2013年1月至今中国地震台网速报目录数据，包括国内3.0级和全球5.5级的地震记录，含每个地震的发震时刻（北京时）、震中经度、震中纬度、震源深度、M震级大小、震中参考位置信息，不定期更新。</view>
+</view>

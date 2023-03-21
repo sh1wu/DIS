@@ -1,1 +1,6 @@
 /* pages/infor/infor.wxss */
+.bartext{
+  font-weight: lighter;
+  font-size: 40rpx;
+  margin-left: 40%;
+}

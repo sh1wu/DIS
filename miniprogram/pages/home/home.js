@@ -12,53 +12,16 @@ Page({
     scrollTop: 0,
     statusBarHeight: app.globalData.statusBarHeight,
     list: '',
-    markers: [{
-      id: 1,
-      latitude: 30.653442,
-      longitude: 104.065681,
-      width: 50,
-      height: 50,
-      iconPath: "cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/location.png",
-      title: "成都市天府广场"
-    },
-    {
-      id: 2,
-      latitude: 30.632293,
-      longitude: 104.078448,
-      width: 50,
-      height: 50,
-      iconPath: "cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/location.png",
-      title: "四川大学望江校区"
-    },
-    {
-      id: 3,
-      latitude: 30.640482,
-      longitude:104.130484,
-      width: 50,
-      height: 50,
-      iconPath: "cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/location.png",
-      title: "塔子山公园"
-    },
-    {
-      id: 4,
-      latitude: 30.70916,
-      longitude:104.029881,
-      width: 50,
-      height: 50,
-      iconPath: "cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/location.png",
-      title: "金牛公园"
-    },
-    {
-      id: 4,
-      latitude: 30.711132,
-      longitude:104.069873,
-      width: 50,
-      height: 50,
-      iconPath: "cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/location.png",
-      title: "应急避难所1"
-    },
-    
-  ],
+    swiperimg: [
+      'https://dis-1301530190.cos.ap-nanjing.myqcloud.com/bgimg/bg3.jpg',
+      'https://dis-1301530190.cos.ap-nanjing.myqcloud.com/bgimg%2Fbg5.png',
+      'https://dis-1301530190.cos.ap-nanjing.myqcloud.com/bgimg/bg2.jpg',
+    ],
+    toastBtn: 0,
+    index: 10,
+    newsindex:10,
+    news:{}
+
 
   },
 
@@ -81,34 +44,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const cont=db.collection('eas-shelter')
-    cont.get({
-      success:res=>{
-        this.setData({
-          list:res.data,
-          
-        })
-        console.log(this.data.list[1].locate.latitude)
-        for(var i=0;i<=this.data.list.length;i++){
-          this.setData({
-            markers: this.data.markers+[{
-              id: i+2,
-              latitude: this.data.list[i].locate.latitude,
-              longitude: this.data.list[i].locate.longitude,
-              width: 50,
-              height: 50,
-              iconPath: "cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/location.png",
-              title: this.data.list[i].sheltername
-            }
-          ],
-          })
-          // var log=this.data.markers
-          // console.log(log)
-        }
-        // console.log(1,this.data.markers)
-      }
-    })
-    console.log(1)
+
+
   },
 
 
@@ -123,8 +60,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.request({
+      url: 'https://service-36mgguzp-1301530190.sh.apigw.tencentcs.com/release/OperateDis_news',
+      success: res => {
+        this.setData({
+          news: res.data,
 
-
+        })
+        app.globalData.news = res.data //将返回的新闻数据设为全局变量
+        this.setData({
+          toastBtn: 0
+        })
+        console.log("成功获取新闻信息")
+      },
+      fail: res => {
+        console.log("Fail")
+        console.log(res)
+      }
+    })
+    var that = this
+    setTimeout(function () {
+      that.setData({
+        toastBtn: 1
+      })
+    }, 2000)
+  
+    
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -151,21 +112,42 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    const index=this.data.newsindex+5
+    this.setData({
+      newsindex:index
+    })
+    wx.showLoading({
+      title: '加载中',
+      mask:true
+    })
+    
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function ({
+    from,
+    target
+  }) {
+    console.log(from, target)
+    return {
+      title: '灾害信息系统',
+      path: '/pages/home/home',
+      success: (res) => {
+        alert: '分享成功'
+      }
+    }
+
 
   },
   navToQx() { //跳转至发布页面
-    if (1) {
-      wx.navigateTo({
-        url: '/pages/covid/covid',
-      })
-    }
+    wx.navigateTo({
+      url: '/pages/qixiang/qixiang',
+    })
   },
   navToDizhen() {
     wx.navigateTo({
@@ -188,9 +170,9 @@ Page({
       url: '/pages/pf/pf',
     })
   },
-  navToJiuyuan() {
+  navToShelter() {
     wx.navigateTo({
-      url: '/pages/phone/phone',
+      url: '/pages/shelter/shelter',
     })
   },
   more() {
@@ -251,6 +233,11 @@ Page({
     console.log(url)
     wx.navigateTo({
       url: url,
+    })
+  },
+  suo: function (e) {
+    wx.navigateTo({
+      url: '../search/search',
     })
   },
 

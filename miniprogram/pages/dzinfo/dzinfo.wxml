@@ -1,0 +1,41 @@
+<!--pages/test2/my.wxml-->
+
+<map id="Map" longitude="{{longitude}}" latitude="{{latitude}}" scale="10" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}"  show-location="true" enable-scroll="true" style="margin-top: -400rpx; width: 100%; height:1800rpx;border-radius: 10px;">
+</map>
+<view bindtap="back" style="margin: 50rpx;position: fixed;top: 25px;background-color: white;border-radius: 20rpx; width: 60rpx;height: 60rpx;">
+  <image src="../../images/leftArrow.png" style="width: 50rpx;height: 50rpx;margin: 5rpx;" bindtap="back"></image>
+</view>
+<view>
+  <view style="background-color: white;width: 110rpx;height: 110rpx;position: fixed;top: 920rpx;left: 600rpx;border-radius: 100%;box-shadow: 1px 1px 5rpx grey;border: solid 1rpx grey;" bindtap="locate"></view>
+  <view style="border: solid red 10rpx;width: 50rpx;height: 50rpx;position: fixed;top: 938rpx;left: 623rpx;border-radius: 100%;" bindtap="locate"></view>
+  <view style="background-color: red;width: 30rpx;height: 30rpx;position: fixed;top: 958rpx;left: 644rpx;border-radius: 100%;" bindtap="locate"></view>
+</view>
+<view class="box">
+  <view class="box1" style="margin-top: 80rpx;">
+    <view style="margin-left: 20%;">震中</view>
+    <view style="margin-left: 40%;">预警震级</view>
+  </view>
+  <view class="box1">
+    <view style="font-size: 38rpx;font-weight: lighter; margin-left: 5%;">{{epicenter}}</view>
+    <view style="font-size: 38rpx;font-weight: lighter;margin-left: 20%;">{{magnitude}}</view>
+  </view>
+  <view class="box1">
+    <view style="margin-top: 15rpx;">
+      <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/epicenter.png" style="width:50rpx;height:50rpx"></image>
+    </view>
+    <view style="margin-left: 30rpx;">
+      <view style="font-size: 35rpx;">位置坐标</view>
+      <view style="font-size: 25rpx;color: #4b4b4b;">东经{{latitude}}度，北纬{{longitude}}度</view>
+    </view>
+  </view>
+  <view class="box1">
+    <view style="margin-top: 15rpx;">
+      <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/date.png" style="width:60rpx;height:60rpx"></image>
+    </view>
+    <view style="margin-left: 20rpx;margin-top: 12rpx;">
+      <view style="font-size: 35rpx;">发震时刻</view>
+      <view style="font-size: 25rpx;color: #4b4b4b;">{{date}}</view>
+    </view>
+  </view>
+  <view style="color: #ebebeb;font-weight: lighter;font-size: 30rpx;margin-left: 20%;">信息来自 国家地震科学数据中心</view>
+</view>

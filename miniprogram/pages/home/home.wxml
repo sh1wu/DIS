@@ -3,95 +3,103 @@
 </view>
 <view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="backcolor"></view>
-<view class="logotext">EAS </view>
-<view style="font-size: 20px;font-weight: lighter;">灾害信息管理系统</view>
+<view style="margin-top: 100px;background-color: #1296db;">
+  <view style="display:flex ;margin-top: -50px; background-color: #1296db;">
+    <view class="logotext" style="color: white;">DIS </view>
+    <view style="font-size: 20px;font-weight: lighter;margin-top: 60px; margin-left: -45px; color: white;">灾害信息管理系统
+    </view>
+    <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/bgimg/logo.png" style="background-color: #1296db; width: 100px;height: 100px; margin-top: 0px;margin-left: 115px; "></image>
+  </view>
+  <view class='page_row' style="background-color: #1296db;" bindtap="suo">
+    <view class="search" style="margin-bottom: 20px;">
+      <view class="df search_arr">
+        <icon class="searchcion" size='34' type='search'></icon>
+        <input class="search_arr_input" disabled placeholder="      搜索" value="{{searchValue}}" />
+      </view>
+    </view>
+  </view>
+
+</view>
 <swiper class="swiper1" autoplay="true" duration="1000" circular="true" previous-margin="10px" next-margin="10px">
-  <swiper-item class="swiperitem">
-    <view>
-      <image class="swiperimage" src="https://43.137.3.168:13319/down/wLeFAlHuUakN.png" catchtap="navSwiper1" data-url="/pages/post/post"></image>
-    </view>
-  </swiper-item>
-  <swiper-item class="swiperitem">
-    <view>
-      <image class="swiperimage" src="https://43.137.3.168:13319/down/wLeFAlHuUakN.png" catchtap="navSwiper2" data-url="/pages/post/post"></image>
-    </view>
-  </swiper-item>
-  <swiper-item class="swiperitem">
-    <view>
-      <image class="swiperimage" src="https://43.137.3.168:13319/down/wLeFAlHuUakN.png" catchtap="navSwiper3" data-url="/pages/post/post"></image>
-    </view>
-  </swiper-item>
+  <block wx:for="{{swiperimg}}" wx:key="*this">
+    <swiper-item class="swiperitem">
+      <view>
+        <image class="swiperimage" src="{{item}}" catchtap="navSwiper1" data-url="/pages/post/post"></image>
+      </view>
+    </swiper-item>
+  </block>
 </swiper>
-<view class="btnline1" style="margin-top: 5%;padding: 5%;">
-  <view bindtap='navToQX'>
-    <image class="qx-icon" src="../../images/qxicon.png">疫情信息专区</image>
-    <view class="covid-text">气象灾害信息</view>
+<view style="color: #4D4D4D;font-size: 25rpx;">
+  <view class="btnline1" style="height: 150rpx; margin-top: 5%;margin: 30rpx; padding: 8rpx;box-shadow: 10px 1px 1px grey;">
+    <view bindtap='navToQx' class="btn1">
+      <image class="qx-icon" src="../../images/qxicon.png"></image>
+      <view class="qx-text">气象灾害信息</view>
+    </view>
+    <view bindtap='navToDizhen' class="btn1">
+      <image class="dizhen-icon" src="../../images/dzicon.png"></image>
+      <view class="dizhen-text" style="margin-left: 25rpx;">地震灾害信息</view>
+    </view>
+    <view bindtap='navToFangzai' class="btn1">
+      <image class="hl-icon" src="../../images/hlicon.png"></image>
+      <view class="fangzai-text" style="margin-left: 25rpx;">洪涝灾害信息</view>
+    </view>
   </view>
-  <view bindtap='navToDizhen'>
-    <image class="dizhen-icon" src="../../images/dzicon.png"></image>
-    <view class="dizhen-text">地震灾害信息</view>
-  </view>
-  <view bindtap='navToFangzai'>
-    <image class="hl-icon" src="../../images/hlicon.png"></image>
-    <view class="fangzai-text">洪涝灾害信息</view>
+  <view class="btnline1" style="height: 170rpx;  margin-left: 30rpx;margin-top: -10rpx;margin-right: 30rpx; padding: 10rpx;box-shadow: 10px 1px 1px grey; border-top: solid 2px #ddd;">
+    <view bindtap='navToGuide' class="btn1">
+      <image class="hl-icon" src="../../images/wricon.png"></image>
+      <view class="fangzai-text" style="margin-left: 25rpx;">污染灾害信息</view>
+    </view>
+    <view bindtap='navToShelter' class="btn1">
+      <image class="hl-icon" src="../../images/bnsicon.png"></image>
+      <view class="fangzai-text" style="margin-left: 39rpx;">避难所信息</view>
+    </view>
+    <view bindtap='navToBinan' class="btn1">
+      <image class="hl-icon" src="../../images/noicon.png"></image>
+      <view class="fangzai-text" style="margin-left: 30rpx;">暂无灾害信息</view>
+    </view>
+
   </view>
 </view>
-<view class="btnline1" style="margin-top: 0%;padding: 5%;border-top: solid 2px #ddd;">
-  <view bindtap='navToGuide'>
-    <image class="hl-icon" src="../../images/wricon.png"></image>
-    <view class="fangzai-text">污染灾害信息</view>
-  </view>
-  <view bindtap='navToBinan' style="padding-left: 5%;background-color: white;">
-    <image class="hl-icon" src="../../images/noicon.png"></image>
-    <view class="fangzai-text">暂无灾害信息</view>
-  </view>
-  <view bindtap='navToJiuyuan' style="padding-left: 5%;background-color: white;">
-    <image class="hl-icon" src="../../images/bnsicon.png"></image>
-    <view class="fangzai-text">避难所信息</view>
-  </view>
+
+<view style="display: flex;margin-top: 4px;background-color: #F2F9FE;">
+  <div class="Line"></div>
+  <view style=" background-color: white;font-weight: bold;font-size: 23px;color: #1296db;">灾情速递</view>
+  <div class="Line1"></div>
 </view>
-<view class="notiLine" style="margin-top: 5%;">
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/notification.png" style="width: 40px;height: 40px;"></image>
-  <swiper autoplay="true" vertical="true" style="width: 70%;height: 40px; border-radius: 10px;">
+<view class="notiLine">
+  <icon type="info" size="20" style="margin-top: 80rpx;margin-left: 100rpx;"></icon>
+  <swiper autoplay="true" vertical="true" style="margin-top: 70rpx;width: 70%;height: 40px; border-radius: 10px;">
     <swiper-item>
-      <view catchtap="navSwiper4" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">快来更改个人头像昵称啦！</view>
+      <view catchtap="navSwiper4" class="swiperBox" style=" font-size: 15px;font-weight:lighter;">长宁地震首个航空转运伤员：意识有所恢复 还得闯“感染关”</view>
     </swiper-item>
     <swiper-item>
-      <view catchtap="navSwiper5" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">秋台风为何往往更凶猛？</view>
+      <view catchtap="navSwiper5" class="swiperBox" style="font-size: 15px; font-weight: lighter;">3月4日18时7分新疆克孜勒苏州阿图什市发生3.0级地震</view>
     </swiper-item>
     <swiper-item>
-      <view catchtap="navSwiper6" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">一张图了解天气与森林草原火险 你该知道的那些事儿</view>
+      <view catchtap="navSwiper6" class="swiperBox" style="font-size: 15px; font-weight: lighter;">习近平对四川长宁6.0级地震作出重要指示</view>
     </swiper-item>
     <swiper-item>
-      <view catchtap="navSwiper7" style="font-size: 15px; font-weight: lighter; width: 150%; height: 40px;margin-top: 6px;">冬季疫情防控指南</view>
+      <view catchtap="navSwiper7" class="swiperBox" style="font-size: 15px; font-weight: lighter;">闵宜仁赴泸定地震灾区调研慰问时强调 继续做好后续阶段抗震救灾工作 </view>
     </swiper-item>
   </swiper>
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="width: 20px;height: 20px; margin: 10px;margin-right: -10px;"></image>
 </view>
-<view style="width: 375px;background-color: black;"></view>
-<view class="btnline2">
-  <view class="sheltertext">应急避难所</view>
-  <button bindtap="more" style="margin-right:-25px; width: 90px; padding-top: 3%; font-size: 13px;font-weight: lighter; color: grey;">更多</button>
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="padding-top: 3%; width: 16px;height: 16px;"></image>
+<view style="width: 80%;margin-left: 10%; font-weight: lighter; height: 80rpx;background-color: #1296db;border-radius: 20rpx" hidden="{{toastBtn}}">
+  <view style="margin-left: 120rpx;margin-top: 20rpx;color: white;;">成功为您推荐十条新消息</view>
 </view>
-<view style="background-color: white;">
-  <view style="color: wheat;font-size: 15px;font-weight: lighter;">成都市应急避难所地点</view>
-  <map id="map" longitude="104.065681" latitude="30.653442" scale="10" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" enable-scroll="false" bindmarkertap="markertap" polyline="{{polyline}}" show-compass="true" bindregionchange="regionchange" style="margin-top: 5%; margin-left: 10%; width: 80%; height:200px;border-radius: 10px;">
-  </map>
-  <view style="margin-top: 10%; background-color: white;border-top: solid 5px #ddd;"></view>
-  <view wx:for="{{list}}" wx:key="id" class="box">
-    <view>
-      <label>{{item.sheltername}}</label>
-    </view>
-    <view>
-      <view>经度</view>
-      <label>{{item.locate.longitude}}</label>
-    </view>
-    <view>
-      <view>纬度</view>
-      <label>{{item.locate.latitude}}</label>
-    </view>
-    <view>
-    </view>
+<view class="newsbox" wx:for="{{news}}" wx:key="id" wx:if="{{index<=newsindex}}">
+  <view>
+    <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/focus.png" style="border-radius: 30rpx;border: #1296db  solid 10rpx; margin-left: 42rpx; width: 20rpx;height: 20rpx;" />
+    <view style="margin-left: 60rpx;margin-top: -20rpx; border-left: solid 3rpx grey;height:270rpx"></view>
   </view>
+  <view style="margin-left: 50rpx;">
+    <view style="color: #4D4D4D;font-weight: lighter;margin-left: -20rpx;">{{item.date}}</view>
+    <view class="newsTitle">{{item.title}}</view>
+    <view style="color: #4D4D4D;font-weight: lighter;margin-top: 20rpx;margin-left: -20rpx;" class="newsContent">{{item.content}} </view>
+  </view>
+  <view>
+    <button open-type='share' style="margin-right: 50rpx; width: 50rpx;">
+      <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/share.png" style="width: 50rpx;height:50rpx" />
+    </button>
+  </view>
+
 </view>

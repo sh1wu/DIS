@@ -1,0 +1,9 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view style="margin-top: 80px; align-self:center; background-color: white;border-radius: 20px;width: 120px;height: 120px;">
+  <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/bgimg/logo.png" style="margin-left: 10px;margin-top: 10px; height: 100px;width: 100px;"></image>
+</view>
+<view class="logotext">灾害信息系统：V1.0.0</view>
+<view style="font-size: large;font:lighter;background-color: white; height: 60px;display: flex;border-top: grey solid 1px;">
+  <view style="margin-top: 10px;font-size: 20px;">作者邮箱：</view>
+  <view style="font-size: medium;margin-top: 13px;" bindtap="copyBtn" data-title="{{title}}">3077644663@qq.com</view>
+</view>

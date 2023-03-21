@@ -1,2 +1,3 @@
-<!--pages/infor/infor.wxml-->
-<text>pages/infor/infor.wxml</text>
+<view class="bartext">分析</view>
+<MapContext></MapContext>
+<map id="Map1" scale="4" style="width: 100%;height: 1000rpx;" subkey="FKTBZ-6CBRQ-N7R5R-4SFXI-L5PXJ-TLBVU"></map>

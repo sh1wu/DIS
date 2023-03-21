@@ -1,0 +1,28 @@
+<!--pages/shelter/shelter.wxml-->
+<text>pages/shelter/shelter.wxml</text>
+<view class="btnline2">
+  <view class="sheltertext">应急避难所</view>
+  <button bindtap="more" style="margin-right:-25px; width: 90px; padding-top: 3%; font-size: 13px;font-weight: lighter; color: grey;">更多</button>
+  <image src="https://43.137.3.168:13319/down/WZn4Zh6HUyqt.png" style="padding-top: 3%; width: 16px;height: 16px;"></image>
+</view>
+<view style="background-color: white;">
+  <view style="color: wheat;font-size: 15px;font-weight: lighter;">成都市应急避难所地点</view>
+  <map id="map" longitude="102.2" latitude="29.4" scale="8" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" enable-scroll="false" bindmarkertap="markertap" polyline="{{polyline}}" show-compass="true" bindregionchange="regionchange" style="margin-top: 5%;width: 100%; height:1000rpx;border-radius: 10px;">
+  </map>
+  <view style="margin-top: 10%; background-color: white;border-top: solid 5px #ddd;"></view>
+  <view wx:for="{{list}}" wx:key="id" class="box">
+    <view>
+      <label>{{item.sheltername}}</label>
+    </view>
+    <view>
+      <view>经度</view>
+      <label>{{item.locate.longitude}}</label>
+    </view>
+    <view>
+      <view>纬度</view>
+      <label>{{item.locate.latitude}}</label>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/shelter/shelter.wxss */
+.btnline2 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: solid 2px #ddd;
+}

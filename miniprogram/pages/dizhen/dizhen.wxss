@@ -1,0 +1,110 @@
+/* pages/dizhen/dizhen.wxss */
+.btnline {
+  margin-top: 20px;
+  margin: 30rpx;
+  display: flex;
+  border-radius: 10px;
+  background-color: rgba(235, 235, 235);
+}
+
+.btn1 {
+  width: 50%;
+  height: 40px;
+  margin: 10rpx;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: lighter;
+}
+
+.btnline2 {
+  font-weight: lighter;
+  height: 100rpx;
+  margin: 20rpx;
+  display: flex;
+  border: solid 2px #EBEBEB;
+}
+
+.btn2 {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  width: 100rpx;
+  border-right: solid 2px #EBEBEB;
+}
+
+.box1 {
+  width: 230rpx;
+  margin: 20rpx;
+  border: solid grey 1rpx;
+}
+
+.regionbtnline {
+  height: 120rpx;
+  margin: 20rpx;
+  display: flex;
+  border: solid 2px #EBEBEB;
+
+}
+
+.regionbtn {
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+  width: 90rpx;
+  border-right: solid 2px #EBEBEB;
+}
+
+.region {
+  display: flex;
+  width: 350rpx;
+  margin: 25rpx;
+}
+
+.regionPicker {
+  width: 500rpx;
+}
+
+.submit {
+  font-size: 50rpx;
+  color: white;
+  border-radius: 20rpx;
+  margin-left: 170rpx;
+  background-color: #0075DA;
+  width: 150rpx;
+  height: 80rpx;
+  box-shadow: 2px 2px 5px #4b4b4b;
+}
+
+.download {
+  font-size: 50rpx;
+  color: white;
+  border-radius: 20rpx;
+  margin-left: 50rpx;
+  background-color: #0075DA;
+  width: 240rpx;
+  height: 80rpx;
+  box-shadow: 2px 2px 5px #4b4b4b;
+
+}
+
+.dzinfo {
+  display: flex;
+  background-color: #F0F5F7;
+  height: 100rpx;
+  margin: 20rpx;
+  border: #EBEBEB solid 2px;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.dzinfo1 {
+  display: flex;
+  background-color: #AFB9C2;
+  height: 180rpx;
+  margin-top: -40rpx;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  color: white;
+  font-size: 40rpx;
+  font-weight: lighter;
+}
+
+

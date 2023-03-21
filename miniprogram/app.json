@@ -4,15 +4,22 @@
     "pages/home/home",
     "pages/warn/warn",
     "pages/infor/infor",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/shelter/shelter",
+    "pages/login/login",
+    "pages/qixiang/qixiang",
+    "pages/dizhen/dizhen",
+    "pages/dzinfo/dzinfo",
+    "pages/search/search",
+    "pages/aboutus/aboutus"
 
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "预信管",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "borderStyle": "white",
@@ -21,16 +28,9 @@
     "backgroundColor": "#FFFFFF",
     "list": [
       {
-        "pagePath": "pages/warn/warn",
-        "iconPath": "./images/yujing.png"  ,
-        "selectedIconPath": "./images/yujing-active.png",
-        "text": "预警信息"
-
-      },
-      {
         "pagePath": "pages/home/home",
         "iconPath": "./images/home.png"  ,
-        "selectedIconPath": "./images/home-active.png",
+        "selectedIconPath": "./images/home-active1.png",
         "text": "首页"
 
       },
@@ -38,13 +38,13 @@
         "pagePath": "pages/infor/infor",
         "iconPath": "./images/qiuzhu.png",
         "selectedIconPath": "./images/qiuzhu-active.png",
-        "text": "求助信息"
+        "text": "信息分析"
 
       },
       {
         "pagePath": "pages/personal/personal",
         "iconPath": "./images/personal.png",
-        "selectedIconPath": "./images/personal-active.png",
+        "selectedIconPath": "./images/personal-active1.png",
         "text": "个人中心"
 
       }
@@ -53,4 +53,5 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "lazyCodeLoading": "requiredComponents"
+  
 }

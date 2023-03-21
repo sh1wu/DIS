@@ -1,0 +1,9 @@
+/* pages/aboutus/aboutus.wxss */
+page {
+  background: rgba(235, 235, 235);
+}
+.logotext{
+  align-self: center;
+  margin-top: 20px;
+  color: #1296db;
+}

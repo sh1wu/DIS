@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view class="background" style="padding-top:{{statusBarHeight}}px;">
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px;"></view>
+<view class="background"></view>
+<image class="btnback" bindtap="navigateBack" src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/backto.png" style="width: 30px;height: 30px;"></image>
+
+<view class="logotext" style="margin-top: 20%;margin-left: 60px; font-weight: lighter;font-size: 30px;color: white;">登录体验更多功能</view>
+<image class="logo" src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/login1.gif"></image>
+
+<view style="color: #00A2FF;" class="view1">
+  <view style="color: #465470;">请输入账号</view>
+  <input type="text" placeholder="Enter Account" bindinput="getAccount" class="input" placeholder-style="color:#D3D6DC; font-weight:lighter;font-size:20px"></input>
+  <view style="color: #465470;">请输入密码</view>
+  <input type="text" placeholder="Enter Password" bindinput="getPassword" class="input" placeholder-style="color:#D3D6DC; font-weight:lighter;font-size:20px"></input>
+</view>
+<button bindtap="loadByAccount" style=" width: 160px;height: 60px;margin-top: 60px; font-weight: lighter;">
+  <view class="toSign" style="padding-top: 15px; color: white; margin-left: -20px; margin-bottom: 10px;width: 150px;height: 40px;">登录</view>
+</button>
+<button bindtap="toRegister" style="width: 200px;height: 40px;margin-top: 160px; font-weight: lighter;">
+  <view class="toRegister" style="font-size: 20px;font-weight: lighter; margin-left: -20px; margin-top: 0px;width: 180px;height: 40px;">尚未注册，立即注册</view>
+</button>

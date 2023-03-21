@@ -1,9 +1,5 @@
-<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
-  <text style="margin-top: 30%;">个人中心</text>
-</view>
-<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="background"></view>
-<image style="width: 90%; border-radius: 10px; height: 150px; margin-left: 5%; margin-top: -20px;" src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/psketch.gif">
+<image style="width: 90%; border-radius: 10px; height: 150px; margin-left: 5%; margin-top: -450rpx;" src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/bgimg/psketch.gif">
   <view class="content1">
     <view style="color: white; font-size: 30px; margin: 5%; margin-top:-100px;">个人中心</view>
     <view class="welcome" style="padding-top: 5%; width:120px;font-size: 20px; font-weight: lighter; margin-top:-150px;" wx:if="{{username}}">
@@ -22,53 +18,33 @@
 </image>
 <view class="content2">
   <button class="feedback" bindtap="navigateToFeedback" style="width: 33%;  color: white;">
-    <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/feedback.png" style="width:40px;height:40px;"></image>
+    <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/feedback.png" style="width:40px;height:40px;"></image>
     <view style="color: black;font-weight: lighter;">反馈</view>
   </button>
   <button class="focus" bindtap="navigateToGuanzhu" style="width: 33%;  color: white;">
-    <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/focus.png" style="width:40px;height:40px;"></image>
+    <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/focusOn.png" style="width:40px;height:40px;"></image>
     <view style="color: black;font-weight: lighter;">关注</view>
   </button>
   <button class="comment" bindtap="navigateToComment" style="width: 33%;  color: white;">
-    <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/comment1.png" style="width:40px;height:40px;"></image>
+    <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/message.png" style="width:40px;height:40px;"></image>
     <view style="color: black;font-weight: lighter;">消息</view>
   </button>
 </view>
+<view class="btnbox">
+  <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/personalData.png" style="margin: 10rpx; width:100rpx;height:100rpx"></image>
+  <view style="font-weight: lighter;font-size: 40rpx;margin: 30rpx;">编辑个人资料</view>
+</view>
+<view class="btnbox" style="margin-top: -30rpx;">
+  <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/questions.png" style="margin: 10rpx; width:100rpx;height:100rpx"></image>
+  <view style="font-weight: lighter;font-size: 40rpx;margin: 30rpx;">常见问题</view>
+</view>
+<view class="btnbox" style="margin-top: -30rpx;">
+  <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/rules.png" style="margin: 10rpx; width:100rpx;height:100rpx"></image>
+  <view style="font-weight: lighter;font-size: 40rpx;margin: 30rpx;">用户守则</view>
+</view>
+<view class="btnbox" style="margin-top: -30rpx;">
+  <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/about.png" style="margin: 10rpx; width:100rpx;height:100rpx"></image>
+  <view style="font-weight: lighter;font-size: 40rpx;margin: 30rpx;">关于</view>
+</view>
 
-<view class="btn1" bindtap="navigateToPFile" style="margin-top: 60px; width: 345px;height: 60px;">
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/personalFile.png" style="width:60px;height:60px; margin-left: -28px;"></image>
-  <view class="personalFile" style=" font-weight: lighter; margin-left: -65px;">编辑个人资料</view>
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="width: 20px;height: 20px; margin-top: 20px;margin-right: -8px;"></image>
-</view>
-<view class="btn2">
-  <button open-type="contact" style=" width: 345px; height: 60px;font-weight: lighter;">
-    <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/kefu.png" style="margin-left: -87%; width:40px;height:40px;"></image>
-    <view style="margin-right: 30%;margin-top: -12%;">联系客服</view>
-</button>
-</view>
-<image class="angular1" src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style=" width: 20px;height: 20px;"></image>
-
-<view class="btn3">
-  <button open-type="openSetting" style="width: 345px; height: 60px;font-weight: lighter;">
-    <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/setting.png" style="margin-top: -4%; margin-left: -87%;  width:70px;height:70px;"></image>
-    <view style="margin-right: 40%;margin-top: -18%;">设置</view>
-  </button>
-</view>
-<image class="angular2" src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style=" width: 20px;height: 20px;"></image>
-
-<view class="btn4" bindtap="navigateToRank" style="width: 345px;height: 60px;">
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/rank.png" style="width:45px;height:45px; margin-left: -12%;"></image>
-  <view class="personalFile" style=" font-weight: lighter; margin-left: -27%;">排行榜</view>
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="margin-top: 5%;margin-right: -8%;width: 20px;height: 20px;"></image>
-</view>
-<view class="btn5" bindtap="navigateToAboutus" style="width: 345px;height: 60px;">
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/aboutus.png" style="width:45px;height:45px;margin-top: 2%; margin-left: -10%;"></image>
-  <view class="personalFile" style=" font-weight: lighter; margin-left: -23%;">关于我们</view>
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="margin-top: 5%;margin-right: -5%;width: 20px;height: 20px;"></image>
-</view>
-<view class="btn5" bindtap="navigateToPolicy" style="width: 345px;height: 60px;">
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/rule.png" style="width:45px;height:45px;margin-top: 2%; margin-left: -10%;"></image>
-  <view class="personalFile" style=" font-weight: lighter; margin-left: -23%;">用户守则</view>
-  <image src="cloud://xly-qcqcr.786c-xly-qcqcr-1301530190/eas-image/angular.png" style="margin-top: 5%;margin-right: -5%;width: 20px;height: 20px;"></image>
-</view>
-<view class="author">Powered By EAS Programmers</view>
+<view class="author">Designed By Shiwu</view>
