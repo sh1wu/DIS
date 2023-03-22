@@ -59,34 +59,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    wx.request({
-      url: 'https://service-36mgguzp-1301530190.sh.apigw.tencentcs.com/release/OperateDis_news',
-      success: res => {
-        this.setData({
-          news: res.data,
-
-        })
-        app.globalData.news = res.data //将返回的新闻数据设为全局变量
-        this.setData({
-          toastBtn: 0
-        })
-        console.log("成功获取新闻信息")
-      },
-      fail: res => {
-        console.log("Fail")
-        console.log(res)
-      }
-    })
-    var that = this
-    setTimeout(function () {
-      that.setData({
-        toastBtn: 1
-      })
-    }, 2000)
-  
-    
-  },
+ 
   /**
    * 生命周期函数--监听页面隐藏
    */

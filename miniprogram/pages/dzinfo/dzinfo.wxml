@@ -6,9 +6,9 @@
   <image src="../../images/leftArrow.png" style="width: 50rpx;height: 50rpx;margin: 5rpx;" bindtap="back"></image>
 </view>
 <view>
-  <view style="background-color: white;width: 110rpx;height: 110rpx;position: fixed;top: 920rpx;left: 600rpx;border-radius: 100%;box-shadow: 1px 1px 5rpx grey;border: solid 1rpx grey;" bindtap="locate"></view>
-  <view style="border: solid red 10rpx;width: 50rpx;height: 50rpx;position: fixed;top: 938rpx;left: 623rpx;border-radius: 100%;" bindtap="locate"></view>
-  <view style="background-color: red;width: 30rpx;height: 30rpx;position: fixed;top: 958rpx;left: 644rpx;border-radius: 100%;" bindtap="locate"></view>
+  <view style="background-color: white;width: 80rpx;height: 80rpx;position: fixed;top: 990rpx;left: 630rpx;border-radius: 100%;box-shadow: 1px 1px 5rpx grey;border: solid 1rpx #eee;" bindtap="locate"></view>
+  <view style="border: solid red 7rpx;width: 40rpx;height: 40rpx;position: fixed;top: 1005rpx;left: 649rpx;border-radius: 100%;" bindtap="locate"></view>
+  <view style="background-color: red;width: 25rpx;height: 25rpx;position: fixed;top: 1018rpx; left: 663rpx;border-radius: 100%;" bindtap="locate"></view>
 </view>
 <view class="box">
   <view class="box1" style="margin-top: 80rpx;">

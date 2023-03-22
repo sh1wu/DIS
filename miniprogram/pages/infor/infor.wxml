@@ -1,3 +1,139 @@
-<view class="bartext">分析</view>
-<MapContext></MapContext>
-<map id="Map1" scale="4" style="width: 100%;height: 1000rpx;" subkey="FKTBZ-6CBRQ-N7R5R-4SFXI-L5PXJ-TLBVU"></map>
+<!-- 选择框 -->
+<view style="display: flex;">
+  <!-- 左侧选择框 -->
+  <view>
+    <view class="headline">
+      <picker bindchange="disasterChange" value="{{index}}" range="{{disaster}}">
+        <view style="margin-top:20rpx;margin-left: 10rpx;font-weight: lighter;">
+          {{placeholder}}{{disaster[disasterindex]}}
+        </view>
+      </picker>
+      <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/disasterchoose.png" style="margin: 20rpx; width: 50rpx;height: 50rpx;"></image>
+    </view>
+    <view class="headline" style="margin-top: 20rpx;">
+      <picker bindchange="chartChange" value="{{index}}" range="{{charts}}">
+        <view style="margin-top:20rpx;margin-left: 10rpx;font-weight: lighter;">
+          {{placeholder4}}{{charts[chartsindex]}}
+        </view>
+      </picker>
+      <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/disasterchoose.png" style="margin: 20rpx; width: 50rpx;height: 50rpx;"></image>
+    </view>
+    <button bindtap="submitCreateCharts" style="font-weight: bold;color:whitesmoke; margin-top: 50rpx;margin-left: 1rpx;border: #ddd solid 4rpx;box-shadow:10rpx 5rpx 10rpx grey; width: 250rpx;background-color:#1296db;"><image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/createCharts.png" style="margin-left: -180rpx;width: 50rpx;height: 50rpx;"></image><view style="margin-top: -60rpx;">生成图表</view></button>
+
+  </view>
+
+
+  <!-- 右侧参数框 -->
+  <view style="margin-left: 10rpx; width: 490rpx; border: solid 5rpx grey;border-radius: 10rpx;padding-bottom: 20rpx;padding-right: 15rpx;">
+    <view style="font-weight: lighter;font-size: 33rpx;margin-left: 180rpx;">添加参数</view>
+    <view style="display: flex;">
+      <view style="font-weight: lighter;font-size: 23rpx;margin-left: 20rpx;">添加地区
+        <view class="headline" style="margin-left: -10rpx; width: 190rpx;">
+          <picker bindchange="province1Change" value="{{index}}" range="{{provinces}}">
+            <view style="margin-top:20rpx;margin-left: 10rpx;font-weight: lighter;">
+              {{placeholder1}}{{provinces[province1index]}}
+            </view>
+          </picker>
+          <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/disasterchoose.png" style="margin-top: 27rpx;margin-left: 20rpx; width: 40rpx;height: 40rpx;"></image>
+        </view>
+        <!-- 增加添加地区的按钮 -->
+        <button style="margin-left: -10rpx; font-size: 60rpx;width: 30rpx;height: 100rpx; border-radius: 100%;" bindtap="addProvince">
+          <view style="margin-left: -20rpx;margin-top: -30rpx;">{{addIcon}}</view>
+        </button>
+        <!-- 第二个地区选择器 -->
+        <view class="headline" style="margin-left: -10rpx;margin-top: -50rpx; width: 190rpx;" hidden="{{hideMorePro}}">
+          <picker bindchange="province2Change" value="{{index}}" range="{{provinces}}">
+            <view style="margin-top:20rpx;margin-left: 10rpx;font-weight: lighter;">
+              {{placeholder11}}{{provinces[province2index]}}
+            </view>
+          </picker>
+          <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/disasterchoose.png" style="margin-top: 27rpx;margin-left: 20rpx; width: 40rpx;height: 40rpx;"></image>
+        </view>
+      </view>
+      <!-- 时间选择 -->
+      <view style="font-weight: lighter;font-size: 23rpx;margin-left: 90rpx;">添加时间
+        <view class="headline" style=" margin-left: -10rpx; width: 190rpx;">
+          <picker bindchange="time1Change" value="{{index}}" range="{{years}}">
+            <view style="margin-top:20rpx;margin-left: 10rpx;font-weight: lighter;">
+              {{placeholder2}}{{years[time1index]}}
+            </view>
+          </picker>
+          <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/disasterchoose.png" style="margin-top: 27rpx;margin-left: 20rpx; width: 40rpx;height: 40rpx;"></image>
+        </view>
+        <!-- 第二个时间选择器 -->
+        <view style="height: 100rpx;background-color: #1296db;width: 10rpx;height: 50rpx; margin-left: 80rpx;"></view>
+        <view class="headline" style=" margin-left: -10rpx; width: 190rpx;">
+          <picker bindchange="time2Change" value="{{index}}" range="{{years}}">
+            <view style="margin-top:20rpx;margin-left: 10rpx;font-weight: lighter;">
+              {{placeholder3}}{{years[time2index]}}
+            </view>
+          </picker>
+          <image src="https://dis-1301530190.cos.ap-nanjing.myqcloud.com/icon/disasterchoose.png" style="margin-top: 27rpx;margin-left: 20rpx; width: 40rpx;height: 40rpx;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 图表生成 -->
+<view class="fundCharts-demo">
+  <View>
+    <!-- chart 1 -->
+    <!-- <view class="u-h3">1.单条折线图（带交互）</view>
+    <view class='s-bg_linear2'><view class="u-label">
+        time: <text>{{line1Time}}</text> 
+        sy: <text>{{line1Sy}}</text>
+    </view>
+    <canvas
+      class="u-canvas"
+      canvas-id="chartline1"
+      bindtouchstart="chart1Touchstart"
+	    bindtouchmove="chart1Touchmove"
+    ></canvas></view> -->
+
+    <!-- chart 2 -->
+    <!-- <view class="u-h3">2.多条折线图（带交互）</view>
+    <view class="u-label">
+        line1 time: <text>{{line2Time1}}</text> 
+        sy: <text>{{line2Sy1}}</text>
+    </view>
+    <view class="u-label">
+        line2 time: <text>{{line2Time2}}</text> 
+        sy: <text>{{line2Sy2}}</text>
+    </view>
+    <view class="u-label">
+        line3 time: <text>{{line2Time3}}</text> 
+        sy: <text>{{line2Sy3}}</text>
+    </view>
+    <canvas
+      class="u-canvas"
+      canvas-id="chartline2"
+      bindtouchstart="chart2Touchstart"
+	    bindtouchmove="chart2Touchmove"
+    ></canvas> -->
+
+    <!-- chart 3 -->
+    <!-- <view class="u-h3">3.面积图</view>
+    <canvas
+      class="u-canvas"
+      canvas-id="chartline3"
+      bindtouchstart="chart3Touchstart"
+	    bindtouchmove="chart3Touchmove"
+    ></canvas> -->
+
+    <!-- chart 4 -->
+    <!-- <view class="u-h3">4.曲线图</view>
+    <view class='s-bg_linear'><canvas
+      class="u-canvas"
+      canvas-id="chartline4"
+    ></canvas></view> -->
+
+    <!-- chart 5 -->
+    <view class="u-h3">地震频率</view>
+    <canvas class="u-canvas" canvas-id="chartline5"></canvas>
+
+  </View>
+</view>
+<button type="primary" bindtap="change">
+  切换
+</button>

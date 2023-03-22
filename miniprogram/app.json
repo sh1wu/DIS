@@ -42,6 +42,13 @@
 
       },
       {
+        "pagePath": "pages/warn/warn",
+        "iconPath": "./images/yujing.png",
+        "selectedIconPath": "./images/yujing-active.png",
+        "text": "预警"
+
+      },
+      {
         "pagePath": "pages/personal/personal",
         "iconPath": "./images/personal.png",
         "selectedIconPath": "./images/personal-active1.png",
